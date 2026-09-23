@@ -5,6 +5,8 @@ metadata:
   namespace: gxdch-manage
 spec:
   replicas: 1
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: gxdch-manage
