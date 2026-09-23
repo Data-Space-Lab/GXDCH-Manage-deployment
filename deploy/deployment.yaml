@@ -13,6 +13,8 @@ spec:
       labels:
         app: gxdch-manage
     spec:
+      imagePullSecrets:
+        - name: ghcr-pull
       containers:
         - name: gxdch-manage
           image: ghcr.io/data-space-lab/gxdch-manage:latest
