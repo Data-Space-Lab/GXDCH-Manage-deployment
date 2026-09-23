@@ -7,7 +7,7 @@ data:
   DJANGO_ALLOWED_HOSTS: manage.gxdch.dil.collab-cloud.eu
   DJANGO_CSRF_TRUSTED_ORIGINS: https://manage.gxdch.dil.collab-cloud.eu
   KEYCLOAK_BASE_URL: https://dil.collab-cloud.eu/auth
-  KEYCLOAK_REALM: master
+  KEYCLOAK_REALM: gxdch
   KEYCLOAK_CLIENT_ID: gxdch-manage
   KEYCLOAK_SCOPE: openid profile email
   SITE_URL: https://manage.gxdch.dil.collab-cloud.eu
