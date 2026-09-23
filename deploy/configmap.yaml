@@ -20,7 +20,7 @@ data:
   DATASPACE_NAME: GXDCH Dataspace
   DATASPACE_POLICY_PROFILE_NAME: GXDCH default dataspace policy profile
   DATASPACE_DSP_URL: https://gxdch.dil.collab-cloud.eu/dsp
-  DATASPACE_CREDENTIAL_SERVICE_URL: https://gxdch.dil.collab-cloud.eu/issuer/api/issuance
+  DATASPACE_CREDENTIAL_SERVICE_URL: https://issuer.gxdch.dil.collab-cloud.eu/api/issuance
   DATASPACE_TRUSTED_ISSUER_DID: did:web:gxdch.dil.collab-cloud.eu:issuer
   ONBOARDING_CREDENTIAL_TYPE: MembershipCredential
   DJANGO_DB_PATH: /app/data/db.sqlite3
