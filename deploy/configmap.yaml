@@ -11,11 +11,15 @@ data:
   KEYCLOAK_CLIENT_ID: gxdch-manage
   KEYCLOAK_SCOPE: openid profile email
   SITE_URL: https://manage.gxdch.dil.collab-cloud.eu
-  ISSUER_ADMIN_BASE_URL: https://gxdch.dil.collab-cloud.eu/issuer/api/admin
-  ISSUER_IDENTITY_BASE_URL: https://gxdch.dil.collab-cloud.eu/issuer/api/identity
+  ISSUER_ADMIN_BASE_URL: https://issuer.gxdch.dil.collab-cloud.eu/api/admin
+  ISSUER_IDENTITY_BASE_URL: https://identity.gxdch.dil.collab-cloud.eu/api/identity
+  ISSUER_STS_BASE_URL: https://issuer.gxdch.dil.collab-cloud.eu/api/sts
+  ISSUER_ISSUANCE_BASE_URL: https://issuance.gxdch.dil.collab-cloud.eu/api/issuance
+  ISSUER_MEMBERSHIP_CREDENTIAL_DEFINITION_ID: gxdch-membership-credential
+  ISSUER_MEMBERSHIP_ATTESTATION_ID: gxdch-membership-holder
   ISSUER_CONTEXT_ID: did:web:gxdch.dil.collab-cloud.eu:issuer
   ISSUER_DID: did:web:gxdch.dil.collab-cloud.eu:issuer
-  ISSUER_DID_DOCUMENT_URL: https://gxdch.dil.collab-cloud.eu/issuer/did.json
+  ISSUER_DID_DOCUMENT_URL: https://issuer.gxdch.dil.collab-cloud.eu/did.json
   DATASPACE_SLUG: gxdch
   DATASPACE_NAME: GXDCH Dataspace
   DATASPACE_POLICY_PROFILE_NAME: GXDCH default dataspace policy profile
