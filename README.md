@@ -23,3 +23,8 @@ kubectl -n gxdch-manage create secret docker-registry ghcr-pull \
 The token needs permission to read packages (`read:packages`).
 
 The UI stores connector onboarding metadata in the `gxdch-manage-data` PVC.
+
+The `route.yaml` and `referencegrant.yaml` files are kept separately because
+the vcluster does not provide Gateway API CRDs. Apply those two files in the
+host cluster that owns the `infra` Gateway, or configure an equivalent route
+there.
