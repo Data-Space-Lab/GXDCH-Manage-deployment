@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gxdch-manage-config
+  namespace: gxdch-manage
+data:
+  DJANGO_ALLOWED_HOSTS: manage.gxdch.dil.collab-cloud.eu
+  DJANGO_CSRF_TRUSTED_ORIGINS: https://manage.gxdch.dil.collab-cloud.eu
+  KEYCLOAK_BASE_URL: https://dil.collab-cloud.eu/auth
+  KEYCLOAK_REALM: master
+  KEYCLOAK_CLIENT_ID: gxdch-manage
+  KEYCLOAK_SCOPE: openid profile email
+  SITE_URL: https://manage.gxdch.dil.collab-cloud.eu
+  ISSUER_ADMIN_BASE_URL: https://gxdch.dil.collab-cloud.eu/issuer/api/admin
+  ISSUER_IDENTITY_BASE_URL: https://gxdch.dil.collab-cloud.eu/issuer/api/identity
+  ISSUER_CONTEXT_ID: did:web:gxdch.dil.collab-cloud.eu:issuer
+  ISSUER_DID: did:web:gxdch.dil.collab-cloud.eu:issuer
+  ISSUER_DID_DOCUMENT_URL: https://gxdch.dil.collab-cloud.eu/issuer/did.json
+  DATASPACE_SLUG: gxdch
+  DATASPACE_NAME: GXDCH Dataspace
+  DATASPACE_POLICY_PROFILE_NAME: GXDCH default dataspace policy profile
+  DATASPACE_DSP_URL: https://gxdch.dil.collab-cloud.eu/dsp
+  DATASPACE_CREDENTIAL_SERVICE_URL: https://gxdch.dil.collab-cloud.eu/issuer/api/issuance
+  DATASPACE_TRUSTED_ISSUER_DID: did:web:gxdch.dil.collab-cloud.eu:issuer
+  ONBOARDING_CREDENTIAL_TYPE: MembershipCredential
+  DJANGO_DB_PATH: /app/data/db.sqlite3

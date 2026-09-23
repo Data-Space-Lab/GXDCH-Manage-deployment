@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gxdch-manage
+  namespace: gxdch-manage
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gxdch-manage
+  template:
+    metadata:
+      labels:
+        app: gxdch-manage
+    spec:
+      containers:
+        - name: gxdch-manage
+          image: ghcr.io/data-space-lab/gxdch-manage:latest
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: gxdch-manage-config
+            - secretRef:
+                name: gxdch-manage-secret
+          ports:
+            - name: http
+              containerPort: 8000
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+              httpHeaders:
+                - name: Host
+                  value: manage.gxdch.dil.collab-cloud.eu
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+              httpHeaders:
+                - name: Host
+                  value: manage.gxdch.dil.collab-cloud.eu
+            initialDelaySeconds: 10
+            periodSeconds: 20
+          volumeMounts:
+            - name: app-data
+              mountPath: /app/data
+      volumes:
+        - name: app-data
+          persistentVolumeClaim:
+            claimName: gxdch-manage-data
