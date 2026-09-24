@@ -15,7 +15,7 @@ data:
   ISSUER_ADMIN_API_VERSION: v1beta
   ISSUER_IDENTITY_BASE_URL: https://identity.gxdch.dil.collab-cloud.eu/api/identity
   ISSUER_STS_BASE_URL: https://issuer.gxdch.dil.collab-cloud.eu/api/sts
-  ISSUER_ISSUANCE_BASE_URL: https://issuer.gxdch.dil.collab-cloud.eu/api/issuance
+  ISSUER_ISSUANCE_BASE_URL: https://issuance.gxdch.dil.collab-cloud.eu/api/issuance
   ISSUER_MEMBERSHIP_CREDENTIAL_DEFINITION_ID: gxdch-membership-credential
   ISSUER_MEMBERSHIP_ATTESTATION_ID: gxdch-membership-holder
   ISSUER_CONTEXT_ID: did:web:gxdch.dil.collab-cloud.eu:issuer
@@ -25,7 +25,7 @@ data:
   DATASPACE_NAME: GXDCH Dataspace
   DATASPACE_POLICY_PROFILE_NAME: GXDCH default dataspace policy profile
   DATASPACE_DSP_URL: https://gxdch.dil.collab-cloud.eu/dsp
-  DATASPACE_CREDENTIAL_SERVICE_URL: https://issuer.gxdch.dil.collab-cloud.eu/api/issuance
+  DATASPACE_CREDENTIAL_SERVICE_URL: https://issuance.gxdch.dil.collab-cloud.eu/api/issuance
   DATASPACE_TRUSTED_ISSUER_DID: did:web:gxdch.dil.collab-cloud.eu:issuer
   ONBOARDING_CREDENTIAL_TYPE: MembershipCredential
   CONNECTOR_MANAGEMENT_AUTHORIZATION: Bearer gxdch-onboarding
