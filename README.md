@@ -24,6 +24,13 @@ The token needs permission to read packages (`read:packages`).
 
 The UI stores connector onboarding metadata in the `gxdch-manage-data` PVC.
 
+During membership issuance, GXDCH Manage calls the connector's authenticated
+`/mgmt/dcp/credential-requests` endpoint. The connector signs the DCP
+`CredentialRequestMessage` with the private key corresponding to its published
+DID document. Set `CONNECTOR_MANAGEMENT_AUTHORIZATION` in
+`deploy/configmap.yaml` to the management authorization accepted by the
+connector. Do not put a private signing key in this repository.
+
 The `route.yaml` and `referencegrant.yaml` files are kept separately because
 the vcluster does not provide Gateway API CRDs. Apply those two files in the
 host cluster that owns the `infra` Gateway, or configure an equivalent route
