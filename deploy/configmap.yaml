@@ -12,6 +12,7 @@ data:
   KEYCLOAK_SCOPE: openid profile email
   SITE_URL: https://manage.gxdch.dil.collab-cloud.eu
   ISSUER_ADMIN_BASE_URL: https://issuer.gxdch.dil.collab-cloud.eu/api/admin
+  ISSUER_ADMIN_API_VERSION: v1beta
   ISSUER_IDENTITY_BASE_URL: https://identity.gxdch.dil.collab-cloud.eu/api/identity
   ISSUER_STS_BASE_URL: https://issuer.gxdch.dil.collab-cloud.eu/api/sts
   ISSUER_ISSUANCE_BASE_URL: https://issuance.gxdch.dil.collab-cloud.eu/api/issuance
