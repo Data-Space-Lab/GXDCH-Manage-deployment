@@ -19,7 +19,7 @@ spec:
         - name: ghcr-pull
       containers:
         - name: gxdch-manage
-          image: ghcr.io/data-space-lab/gxdch-manage:0.2.11
+          image: ghcr.io/data-space-lab/gxdch-manage:0.2.12
           imagePullPolicy: Always
           envFrom:
             - configMapRef:
