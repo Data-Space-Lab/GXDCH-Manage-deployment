@@ -7,8 +7,7 @@ metadata:
     {{- include "gxdch-manage.labels" . | nindent 4 }}
 spec:
   selector:
-    app.kubernetes.io/name: {{ include "gxdch-manage.name" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
+    app: {{ include "gxdch-manage.name" . }}
   ports:
     - name: http
       port: {{ .Values.service.port }}

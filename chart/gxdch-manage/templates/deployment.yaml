@@ -11,13 +11,11 @@ spec:
     type: Recreate
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ include "gxdch-manage.name" . }}
-      app.kubernetes.io/instance: {{ .Release.Name }}
+      app: {{ include "gxdch-manage.name" . }}
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: {{ include "gxdch-manage.name" . }}
-        app.kubernetes.io/instance: {{ .Release.Name }}
+        app: {{ include "gxdch-manage.name" . }}
     spec:
       imagePullSecrets:
         {{- toYaml .Values.imagePullSecrets | nindent 8 }}
