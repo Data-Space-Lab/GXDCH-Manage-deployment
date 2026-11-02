@@ -15,6 +15,7 @@ data:
   SITE_URL: {{ .Values.siteUrl | quote }}
   ISSUER_ADMIN_BASE_URL: {{ .Values.issuer.adminBaseUrl | quote }}
   ISSUER_ADMIN_API_VERSION: {{ .Values.issuer.apiVersion | quote }}
+  ISSUER_IDENTITY_API_VERSION: {{ .Values.issuer.identityApiVersion | quote }}
   ISSUER_IDENTITY_BASE_URL: {{ .Values.issuer.identityBaseUrl | quote }}
   ISSUER_STS_BASE_URL: {{ .Values.issuer.stsBaseUrl | quote }}
   ISSUER_ISSUANCE_BASE_URL: {{ .Values.issuer.issuanceBaseUrl | quote }}

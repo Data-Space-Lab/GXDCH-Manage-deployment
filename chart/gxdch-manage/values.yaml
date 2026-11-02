@@ -25,6 +25,7 @@ siteUrl: https://manage.gxdch.dil.collab-cloud.eu
 issuer:
   adminBaseUrl: https://issuer.gxdch.dil.collab-cloud.eu/api/admin
   apiVersion: v1beta
+  identityApiVersion: v1beta
   identityBaseUrl: https://identity.gxdch.dil.collab-cloud.eu/api/identity
   stsBaseUrl: https://issuer.gxdch.dil.collab-cloud.eu/api/sts
   issuanceBaseUrl: https://issuance.gxdch.dil.collab-cloud.eu/api/issuance
