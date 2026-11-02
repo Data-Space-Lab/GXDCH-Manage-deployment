@@ -1,6 +1,6 @@
 # GXDCH Manage deployment
 
-This repository contains the Kubernetes and ArgoCD manifests for GXDCH Manage.
+This repository contains the Helm chart and ArgoCD configuration for GXDCH Manage.
 The application image is built from `GXDCH-Manage-source` and published as
 `ghcr.io/data-space-lab/gxdch-manage`.
 
@@ -35,3 +35,17 @@ The `route.yaml` and `referencegrant.yaml` files are kept separately because
 the vcluster does not provide Gateway API CRDs. Apply those two files in the
 host cluster that owns the `infra` Gateway, or configure an equivalent route
 there.
+
+## Helm profiles
+
+The chart has a GXDCH default profile and an OULUDS profile:
+
+```bash
+helm lint chart/gxdch-manage
+helm template gxdch-manage chart/gxdch-manage \
+  -f chart/gxdch-manage/values-ouluds.yaml
+```
+
+Secrets and the existing SQLite PVC are intentionally not rendered by the
+chart. The OULUDS ArgoCD Application should use the chart with
+`values-ouluds.yaml`.

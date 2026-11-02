@@ -1,0 +1,52 @@
+nameOverride: gxdch-manage
+
+image:
+  repository: ghcr.io/data-space-lab/gxdch-manage
+  tag: "0.2.16"
+  pullPolicy: Always
+
+imagePullSecrets:
+  - name: ghcr-pull
+
+manageHost: manage.gxdch.dil.collab-cloud.eu
+allowedHosts:
+  - manage.gxdch.dil.collab-cloud.eu
+csrfTrustedOrigins:
+  - https://manage.gxdch.dil.collab-cloud.eu
+
+keycloak:
+  baseUrl: https://dil.collab-cloud.eu/auth
+  realm: gxdch
+  clientId: gxdch-manage
+  scope: openid profile email
+
+siteUrl: https://manage.gxdch.dil.collab-cloud.eu
+
+issuer:
+  adminBaseUrl: https://issuer.gxdch.dil.collab-cloud.eu/api/admin
+  apiVersion: v1beta
+  identityBaseUrl: https://identity.gxdch.dil.collab-cloud.eu/api/identity
+  stsBaseUrl: https://issuer.gxdch.dil.collab-cloud.eu/api/sts
+  issuanceBaseUrl: https://issuance.gxdch.dil.collab-cloud.eu/api/issuance
+  membershipCredentialDefinitionId: gxdch-membership-credential
+  membershipAttestationId: gxdch-membership-holder
+  contextId: did:web:gxdch.dil.collab-cloud.eu:issuer
+  did: did:web:gxdch.dil.collab-cloud.eu:issuer
+  didDocumentUrl: https://issuer.gxdch.dil.collab-cloud.eu/did.json
+
+dataspace:
+  slug: gxdch
+  name: GXDCH Dataspace
+  policyProfileName: GXDCH default dataspace policy profile
+  dspUrl: https://gxdch.dil.collab-cloud.eu/dsp
+  credentialServiceUrl: https://issuance.gxdch.dil.collab-cloud.eu/api/issuance
+  trustedIssuerDid: did:web:gxdch.dil.collab-cloud.eu:issuer
+  onboardingCredentialType: MembershipCredential
+  connectorManagementAuthorization: Bearer gxdch-onboarding
+
+persistence:
+  size: 1Gi
+  existingClaim: gxdch-manage-data
+
+service:
+  port: 8000

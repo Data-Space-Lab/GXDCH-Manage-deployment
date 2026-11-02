@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/Data-Space-Lab/GXDCH-Manage-deployment.git
     targetRevision: main
-    path: deploy
+    path: chart/gxdch-manage
   destination:
     server: https://kubernetes.default.svc
     namespace: gxdch-manage

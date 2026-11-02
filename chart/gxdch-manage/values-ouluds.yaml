@@ -1,0 +1,34 @@
+manageHost: manage.ouluds.dil.collab-cloud.eu
+allowedHosts:
+  - manage.ouluds.dil.collab-cloud.eu
+  - manage.gxdch.dil.collab-cloud.eu
+csrfTrustedOrigins:
+  - https://manage.ouluds.dil.collab-cloud.eu
+  - https://manage.gxdch.dil.collab-cloud.eu
+
+keycloak:
+  realm: ouluds
+
+siteUrl: https://manage.ouluds.dil.collab-cloud.eu
+
+issuer:
+  adminBaseUrl: https://issuer.ouluds.dil.collab-cloud.eu/api/admin
+  identityBaseUrl: https://identity.ouluds.dil.collab-cloud.eu/api/identity
+  stsBaseUrl: https://issuer.ouluds.dil.collab-cloud.eu/api/sts
+  issuanceBaseUrl: https://issuance.ouluds.dil.collab-cloud.eu/api/issuance
+  membershipCredentialDefinitionId: ouluds-membership-credential
+  membershipAttestationId: ouluds-membership-holder
+  contextId: did:web:ouluds.dil.collab-cloud.eu:issuer
+  did: did:web:ouluds.dil.collab-cloud.eu:issuer
+  didDocumentUrl: https://issuer.ouluds.dil.collab-cloud.eu/did.json
+
+dataspace:
+  slug: ouluds
+  name: OULUDS Dataspace
+  policyProfileName: OULUDS default dataspace policy profile
+  dspUrl: https://ouluds.dil.collab-cloud.eu/dsp
+  credentialServiceUrl: https://issuance.ouluds.dil.collab-cloud.eu/api/issuance
+  trustedIssuerDid: did:web:ouluds.dil.collab-cloud.eu:issuer
+  # Keep this aligned with the authorization accepted by the OULUDS connectors.
+  # The current connector deployments use the shared onboarding token.
+  connectorManagementAuthorization: Bearer gxdch-onboarding

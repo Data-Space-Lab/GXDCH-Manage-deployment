@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "gxdch-manage.name" . }}-config
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "gxdch-manage.labels" . | nindent 4 }}
+data:
+  DJANGO_ALLOWED_HOSTS: {{ join "," .Values.allowedHosts | quote }}
+  DJANGO_CSRF_TRUSTED_ORIGINS: {{ join "," .Values.csrfTrustedOrigins | quote }}
+  KEYCLOAK_BASE_URL: {{ .Values.keycloak.baseUrl | quote }}
+  KEYCLOAK_REALM: {{ .Values.keycloak.realm | quote }}
+  KEYCLOAK_CLIENT_ID: {{ .Values.keycloak.clientId | quote }}
+  KEYCLOAK_SCOPE: {{ .Values.keycloak.scope | quote }}
+  SITE_URL: {{ .Values.siteUrl | quote }}
+  ISSUER_ADMIN_BASE_URL: {{ .Values.issuer.adminBaseUrl | quote }}
+  ISSUER_ADMIN_API_VERSION: {{ .Values.issuer.apiVersion | quote }}
+  ISSUER_IDENTITY_BASE_URL: {{ .Values.issuer.identityBaseUrl | quote }}
+  ISSUER_STS_BASE_URL: {{ .Values.issuer.stsBaseUrl | quote }}
+  ISSUER_ISSUANCE_BASE_URL: {{ .Values.issuer.issuanceBaseUrl | quote }}
+  ISSUER_MEMBERSHIP_CREDENTIAL_DEFINITION_ID: {{ .Values.issuer.membershipCredentialDefinitionId | quote }}
+  ISSUER_MEMBERSHIP_ATTESTATION_ID: {{ .Values.issuer.membershipAttestationId | quote }}
+  ISSUER_CONTEXT_ID: {{ .Values.issuer.contextId | quote }}
+  ISSUER_DID: {{ .Values.issuer.did | quote }}
+  ISSUER_DID_DOCUMENT_URL: {{ .Values.issuer.didDocumentUrl | quote }}
+  DATASPACE_SLUG: {{ .Values.dataspace.slug | quote }}
+  DATASPACE_NAME: {{ .Values.dataspace.name | quote }}
+  DATASPACE_POLICY_PROFILE_NAME: {{ .Values.dataspace.policyProfileName | quote }}
+  DATASPACE_DSP_URL: {{ .Values.dataspace.dspUrl | quote }}
+  DATASPACE_CREDENTIAL_SERVICE_URL: {{ .Values.dataspace.credentialServiceUrl | quote }}
+  DATASPACE_TRUSTED_ISSUER_DID: {{ .Values.dataspace.trustedIssuerDid | quote }}
+  ONBOARDING_CREDENTIAL_TYPE: {{ .Values.dataspace.onboardingCredentialType | quote }}
+  CONNECTOR_MANAGEMENT_AUTHORIZATION: {{ .Values.dataspace.connectorManagementAuthorization | quote }}
+  DJANGO_DB_PATH: /app/data/db.sqlite3
