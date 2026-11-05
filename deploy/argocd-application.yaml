@@ -17,6 +17,32 @@ spec:
           value: "false"
         - name: registry.pullSecret.name
           value: ghcr-pull
+      values: |
+        manageHost: manage.{tenant_host}
+        allowedHosts:
+          - manage.{tenant_host}
+        csrfTrustedOrigins:
+          - https://manage.{tenant_host}
+        keycloak:
+          realm: {tenant}
+        siteUrl: https://manage.{tenant_host}
+        issuer:
+          adminBaseUrl: https://issuer.{tenant_host}/api/admin
+          identityBaseUrl: https://identity.{tenant_host}/api/identity
+          stsBaseUrl: https://issuer.{tenant_host}/api/sts
+          issuanceBaseUrl: https://issuance.{tenant_host}/api/issuance
+          membershipCredentialDefinitionId: {tenant}-membership-credential
+          membershipAttestationId: {tenant}-membership-holder
+          contextId: did:web:{tenant_host}:issuer
+          did: did:web:{tenant_host}:issuer
+          didDocumentUrl: https://issuer.{tenant_host}/did.json
+        dataspace:
+          slug: {tenant}
+          name: {tenant} Dataspace
+          policyProfileName: {tenant} default dataspace policy profile
+          dspUrl: https://{tenant_host}/dsp
+          credentialServiceUrl: https://issuance.{tenant_host}/api/issuance
+          trustedIssuerDid: did:web:{tenant_host}:issuer
   destination:
     server: https://kubernetes.default.svc
     namespace: gxdch-manage
