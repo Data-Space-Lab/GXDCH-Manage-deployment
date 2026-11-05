@@ -9,6 +9,14 @@ spec:
     repoURL: https://github.com/Data-Space-Lab/GXDCH-Manage-deployment.git
     targetRevision: main
     path: chart/gxdch-manage
+    helm:
+      # Use the externally provisioned Secret; credentials must not be stored
+      # in this Application manifest.
+      parameters:
+        - name: registry.pullSecret.create
+          value: "false"
+        - name: registry.pullSecret.name
+          value: ghcr-pull
   destination:
     server: https://kubernetes.default.svc
     namespace: gxdch-manage

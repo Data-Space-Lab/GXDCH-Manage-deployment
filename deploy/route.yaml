@@ -8,7 +8,7 @@ spec:
     - name: infra
       namespace: infra-gateway
   hostnames:
-    - "manage.gxdch.dil.collab-cloud.eu"
+    - "manage.{tenant_host}"
   rules:
     - matches:
         - path:
