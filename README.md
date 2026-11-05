@@ -22,6 +22,24 @@ kubectl -n gxdch-manage create secret docker-registry ghcr-pull \
 
 The token needs permission to read packages (`read:packages`).
 
+### Provision through Argo CD
+
+The Helm chart can create `ghcr-pull` during an Argo sync. In the Argo CD UI,
+open the `gxdch-manage` application, choose **Details**, edit **Parameters**,
+and add:
+
+```text
+registry.pullSecret.create=true
+registry.pullSecret.username=<github-username>
+registry.pullSecret.password=<github-token>
+```
+
+The Secret is created in the application namespace and is already referenced
+by the GXDCH Manage Deployment. This keeps the token out of Git, but the value
+is stored in the Argo Application override. Use this only for trusted Argo
+administrators; for production, provision the Secret externally or with a
+secret operator and keep `registry.pullSecret.create=false`.
+
 The UI stores connector onboarding metadata in the `gxdch-manage-data` PVC.
 
 During membership issuance, GXDCH Manage calls the connector's authenticated

@@ -8,6 +8,16 @@ image:
 imagePullSecrets:
   - name: ghcr-pull
 
+# Set create=true only when supplying credentials through a protected Argo CD
+# Helm parameter override. Prefer an externally-created Secret in production.
+registry:
+  server: ghcr.io
+  pullSecret:
+    create: false
+    name: ghcr-pull
+    username: ""
+    password: ""
+
 manageHost: manage.gxdch.dil.collab-cloud.eu
 allowedHosts:
   - manage.gxdch.dil.collab-cloud.eu
