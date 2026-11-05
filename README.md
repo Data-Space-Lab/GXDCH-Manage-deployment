@@ -42,6 +42,19 @@ secret operator and keep `registry.pullSecret.create=false`.
 
 The UI stores connector onboarding metadata in the `gxdch-manage-data` PVC.
 
+### Tenant Keycloak client
+
+`deploy/keycloak-clients.yaml` declares the `gxdch-manage` OIDC client used by
+the UI. When this application is selected through ManagementAPI tenant
+provisioning, ManagementAPI creates or updates the client in the tenant realm
+and writes its generated secret to `gxdch-manage-secret` under
+`KEYCLOAK_CLIENT_SECRET`. Existing keys in that Secret are preserved. The
+client secret is never stored in this repository.
+
+Directly syncing the Argo CD application does not create the Keycloak client;
+that operation requires the tenant provisioning flow or an equivalent
+administrator-controlled reconciliation.
+
 During membership issuance, GXDCH Manage calls the connector's authenticated
 `/mgmt/dcp/credential-requests` endpoint. The connector signs the DCP
 `CredentialRequestMessage` with the private key corresponding to its published
