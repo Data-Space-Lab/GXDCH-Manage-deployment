@@ -1,0 +1,10 @@
+{
+  "name": "gxdch-manage",
+  "display_name": "GXDCH Manage",
+  "description": "GXDCH dataspace administration and participant onboarding UI.",
+  "repo_url": "https://github.com/Data-Space-Lab/GXDCH-Manage-deployment.git",
+  "target_revision": "HEAD",
+  "path": "chart/gxdch-manage",
+  "namespace": "gxdch-manage",
+  "enabled": true
+}
