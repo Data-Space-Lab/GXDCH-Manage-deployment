@@ -1,0 +1,11 @@
+clients:
+  - client_id: gxdch-manage
+    secret_name: gxdch-manage-secret
+    secret_key: KEYCLOAK_CLIENT_SECRET
+    redirect_uris:
+      - https://manage.{tenant_host}/oidc/callback/
+    web_origins:
+      - https://manage.{tenant_host}
+    standard_flow_enabled: true
+    direct_access_grants_enabled: false
+    service_accounts_enabled: false
