@@ -2,7 +2,7 @@ nameOverride: gxdch-manage
 
 image:
   repository: ghcr.io/data-space-lab/gxdch-manage
-  tag: "0.2.16"
+  tag: "0.2.17"
   pullPolicy: Always
 
 imagePullSecrets:
